@@ -197,6 +197,48 @@ Briefly **describe** the key information from each denoising output file:
 2. Denoising Stats
 3. Denoised Table
 
+```
+#!/bin/bash
+#SBATCH --job-name=denoise
+#SBATCH --nodes=1
+#SBATCH --ntasks=12
+#SBATCH --partition=amilan
+#SBATCH --time=02:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --output=slurm-%j.out
+#SBATCH --qos=normal
+#SBATCH --mail-user=alexander.jones@colostate.edu
+
+#What needs to go here in order to “turn on” qiime2? Hint: we do these 2 commands every time we activate qiime2!
+
+module purge
+
+module load qiime2/2024.10_amplicon
+
+#Below is the command you will run to denoise the samples.
+
+cd /scratch/alpine/c837933776@colostate.edu/cow/dada2
+
+
+qiime dada2 denoise-paired \--i-demultiplexed-seqs ../demux/cow_demux.qza \--p-trim-left-f NUMBER \--p-trim-left-r NUMBER \--p-trunc-len-f NUMBER \--p-trunc-len-r NUMBER \--o-representative-sequences cow_seqs_dada2.qza \--o-denoising-stats cow_dada2_stats.qza \--o-table cow_table_dada2.qza
+
+
+#Visualize the denoising results:
+
+qiime metadata tabulate \--m-input-file cow_dada2_stats.qza \--o-visualization cow_metadata_tab.qzv
+
+qiime feature-table summarize \--i-table cow_table_dada2.qza \--m-sample-metadata-file ../metadata/cow_metadata.txt \--o-visualization cow_ft_sum.qzv
+
+qiime feature-table tabulate-seqs \--i-data cow_seqs_dada2.qza \--o-visualization cow_ft_tab.qzv
+
+
+
+
+```
+
+
+
+
 **Answer the following questions:**  
 1. Where does the median Q-score begin to dip below Q30 for the forward reads and the reverse reads?
 2. What is the mean reads per sample?
