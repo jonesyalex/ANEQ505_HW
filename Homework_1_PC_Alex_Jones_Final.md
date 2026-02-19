@@ -84,8 +84,10 @@ module load qiime2/2024.10_amplicon
 
 6.    Import the sequences/reads into a Qiime2-readable format (.qza). Note this might take 10-20 mins
 
+
 ```
 qiime tools import \--type EMPPairedEndSequences \--input-path raw_reads \--output-path cow_reads.qza
+
 ```
 
 
