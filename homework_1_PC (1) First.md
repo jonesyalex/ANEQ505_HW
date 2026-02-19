@@ -268,4 +268,3 @@ qiime dada2 denoise-paired --i-demultiplexed-seqs ../demux/demux_cow.qza --p-tri
 write all of your commands here, then use command+P (for mac) or control+P (for windows) and search Git: commit. click it. then search for Git: Push and click it. go to your github online to check that it pushed correctly. we will check your github for homework credit. 
 
 
-![[Pasted image 20260217190452.png]]
