@@ -172,13 +172,13 @@ qiime feature-table tabulate-seqs --i-data cow_seqs_dada2.qza --o-visualization 
 ``
 	
 Briefly **describe** the key information from each denoising output file:
-1. Representative Sequences ()
+1. Representative Sequences (cow_seqs_dada2.qza) (cow_ft_tab.qzv)
 
 
-2. Denoising Stats
+2. Denoising Stats (cow_dada2_stats.qza) (cow_metadata_tab.qzv)
 
 
-3. Denoised Table
+3. Denoised Table (cow_table_dada2.qza)(cow_ft_sum.qzv)
 
 
 
