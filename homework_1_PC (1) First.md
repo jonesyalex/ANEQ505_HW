@@ -180,10 +180,20 @@ Fill in the blank to denoise your samples based on what you think should be trim
 
 LEFT OFF HERE
 
-This code worked!!!!!!!!
+# This code worked!!!!!!!!
+```
 qiime dada2 denoise-paired --i-demultiplexed-seqs ../demux/demux_cow.qza --p-trim-left-f 0 --p-trim-left-r 0 --p-trunc-len-f 250 --p-trunc-len-r 250 --p-n-threads 6 --o-representative-sequences cow_seqs_dada2.qza --o-denoising-stats cow_dada2_stats.qza --o-table cow_table_dada2.qza
 
 
+qiime metadata tabulate --m-input-file cow_dada2_stats.qza --o-visualization cow_metadata_tab.qzv
+
+qiime feature-table summarize --i-table cow_table_dada2.qza --m-sample-metadata-file ../metadata/cow_metadata.txt --o-visualization cow_ft_sum.qzv
+
+qiime feature-table tabulate-seqs --i-data cow_seqs_dada2.qza --o-visualization cow_ft_tab.qzv
+```
+
+
+``
 
 ```
 cd ADD PATH TO DADA2 DIRECTORY
