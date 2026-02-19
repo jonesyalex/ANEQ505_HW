@@ -24,17 +24,7 @@
 
 We will first begin by copying raw sequencing data from a public folder on Alpine into a new directory (that you create) on your Alpine account.
 
-#### Working directory
-```
 
-
-
-```
-#### Class reservation
-```
-sinteractive --reservation=aneq505 --time=01:00:00 --partition=amilan --nodes=1 --
-ntasks=2 --qos=normal
-```
 # Initial Steps
 
 1. Log into Alpine using OnDemand and create a new directory for this new analysis in your _scratch_ directory. Hint: it should look something like: /scratch/alpine/$USER/cow/
