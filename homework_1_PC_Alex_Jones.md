@@ -45,7 +45,13 @@ We will first begin by copying raw sequencing data from a public folder on Alpin
 6. Copy the raw sequencing files from this public folder to **your new folder** using the terminal. Do **not** change the names of these files and folders. Hint: make sure you are in your new cow folder before you run this code (this will copy over the whole folder):  
 
 ```
+#Working Directory
+
+cd /scratch/alpine/c837933776@colostate.edu/cow
+
+
 #Check directory:
+
 pwd 
 
 #Check to see if subdirectories are present

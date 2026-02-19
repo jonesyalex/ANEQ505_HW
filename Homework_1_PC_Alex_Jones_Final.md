@@ -1,8 +1,8 @@
 **ANEQ Homework #1: Practice Importing Data, Demultiplexing Reads, and Denoising**
 
-**Due Feb 12th at midnight**
+**Due Feb 19th at midnight**
 
-**Name:**
+**Name:** Alex Jones
 
 **For complete credit for this assignment, you must answer all questions and include all commands in your obsidian upload.**
 
@@ -42,6 +42,8 @@ We will first begin by copying raw sequencing data from a public folder on Alpin
 
 5. On OnDemand, go to your cow directory and open a new terminal
 
+
+
 6. Copy the raw sequencing files from this public folder to **your new folder** using the terminal. Do **not** change the names of these files and folders. Hint: make sure you are in your new cow folder before you run this code (this will copy over the whole folder):  
 
 ```
@@ -58,6 +60,9 @@ ainteractive --ntasks=6 --time=02:00:00
 
 #insert your code here to activate qiime. Hint: there should be 2 things you add here
 
+module purge
+
+module load qiime2/2024.10_amplicon
 
 ```
 
