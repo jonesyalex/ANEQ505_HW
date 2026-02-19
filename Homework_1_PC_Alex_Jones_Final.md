@@ -69,6 +69,7 @@ cp -r /pl/active/courses/2024_summer/maw_2024/raw_reads .
 
 ```
 #launch an interactive session: 
+
 ainteractive --ntasks=6 --time=02:00:00
 
 
@@ -150,8 +151,9 @@ Fill in the blank to denoise your samples based on what you think should be trim
 
 cd ../
 
-# cd dada2
+#Enter dada2 directory 
 
+cd dada2
 
 
 qiime dada2 denoise-paired --i-demultiplexed-seqs ../demux/demux_cow.qza --p-trim-left-f 0 --p-trim-left-r 0 --p-trunc-len-f 250 --p-trunc-len-r 250 --p-n-threads 6 --o-representative-sequences cow_seqs_dada2.qza --o-denoising-stats cow_dada2_stats.qza --o-table cow_table_dada2.qza
@@ -163,9 +165,6 @@ qiime metadata tabulate --m-input-file cow_dada2_stats.qza --o-visualization cow
 qiime feature-table summarize --i-table cow_table_dada2.qza --m-sample-metadata-file ../metadata/cow_metadata.txt --o-visualization cow_ft_sum.qzv
 
 qiime feature-table tabulate-seqs --i-data cow_seqs_dada2.qza --o-visualization cow_ft_tab.qzv
-
-
-
 
 ```
 ``
