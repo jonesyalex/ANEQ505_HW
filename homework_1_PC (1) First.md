@@ -242,6 +242,12 @@ qiime feature-table tabulate-seqs \--i-data cow_seqs_dada2.qza \--o-visualizatio
 
  Experimental code
 
+
+
+
+
+
+
 # need to figure out the number of pairs 
 
 I thought it was 251?
