@@ -103,30 +103,6 @@ a.    Go into your slurm directory using OnDemand. Create a new file named **
 #SBATCH --mail-type=ALL
 #SBATCH --output=slurm-%j.out
 #SBATCH --qos=normal
-#SBATCH --mail-user=ADD_YOUR_EMAIL@colostate.edu
-
-#What needs to go here in order to “turn on” qiime2? Hint: we do these 2 commands every time we activate qiime2!
-
-#change the following line if your file path looks different
-cd /scratch/alpine/$USER/cow/demux
-
-#Below is the command you will run to demultiplex the samples.
-
-qiime demux emp-paired \--m-barcodes-file ../metadata/ADD BARCODE FILE NAME HERE \--m-barcodes-column barcode \--p-rev-comp-mapping-barcodes \--p-rev-comp-barcodes \--i-seqs ../cow_reads.qza \--o-per-sample-sequences demux_cow.qza \--o-error-correction-details cow_demux_error.qza
-
-#visualize the read quality
-qiime demux summarize \--i-data demux_cow.qza \--o-visualization demux_cow.qzv
-
-
-#!/bin/bash
-#SBATCH --job-name=demux
-#SBATCH --nodes=1
-#SBATCH --ntasks=12
-#SBATCH --partition=amilan
-#SBATCH --time=02:00:00
-#SBATCH --mail-type=ALL
-#SBATCH --output=slurm-%j.out
-#SBATCH --qos=normal
 #SBATCH --mail-user=alexander.jones@colostate.edu
 
 #What needs to go here in order to “turn on” qiime2? Hint: we do these 2 commands every time we activate qiime2!
@@ -153,8 +129,16 @@ qiime demux summarize \--i-data demux_cow.qza \--o-visualization demux_cow.qzv
 
  Run the script in your slurm directory as a job using: 
  ```
- dos2unix name of your script.sh
- sbatch name of your script.sh
+ 
+#In Terminal 
+
+cd /scratch/alpine/c837933776@colostate.edu/cow/slurm
+ 
+dos2unix demux.sh
+
+sbatch demux.sh
+ 
+ 
  ```
 
 8.    Denoise
@@ -162,16 +146,27 @@ qiime demux summarize \--i-data demux_cow.qza \--o-visualization demux_cow.qzv
 Fill in the blank to denoise your samples based on what you think should be trimmed (from the front of the reads) or truncated (from the ends of the reads) based on the demux_cow.qzv file. You can run this in the terminal or as a job.
 
 ```
-cd ADD PATH TO DADA2 DIRECTORY
+#Back out of slurm directory
 
-qiime dada2 denoise-paired \--i-demultiplexed-seqs ../demux/cow_demux.qza \--p-trim-left-f NUMBER \--p-trim-left-r NUMBER \--p-trunc-len-f NUMBER \--p-trunc-len-r NUMBER \--o-representative-sequences cow_seqs_dada2.qza \--o-denoising-stats cow_dada2_stats.qza \--o-table cow_table_dada2.qza
+cd ../
 
-#Visualize the denoising results:
-qiime metadata tabulate \--m-input-file cow_dada2_stats.qza \--o-visualization YOUR_OUTPUT_FILENAME_HERE.qzv
+# cd dada2
 
-qiime feature-table summarize \--i-table cow_table_dada2.qza \--m-sample-metadata-file ../metadata/cow_metadata.txt \--o-visualization YOUR_OUTPUT_FILENAME_HERE.qzv
 
-qiime feature-table tabulate-seqs \--i-data cow_seqs_dada2.qza \--o-visualization YOUR_OUTPUT_FILENAME_HERE.qzv
+
+qiime dada2 denoise-paired --i-demultiplexed-seqs ../demux/demux_cow.qza --p-trim-left-f 0 --p-trim-left-r 0 --p-trunc-len-f 250 --p-trunc-len-r 250 --p-n-threads 6 --o-representative-sequences cow_seqs_dada2.qza --o-denoising-stats cow_dada2_stats.qza --o-table cow_table_dada2.qza
+
+
+qiime metadata tabulate --m-input-file cow_dada2_stats.qza --o-visualization cow_metadata_tab.qzv
+
+
+qiime feature-table summarize --i-table cow_table_dada2.qza --m-sample-metadata-file ../metadata/cow_metadata.txt --o-visualization cow_ft_sum.qzv
+
+qiime feature-table tabulate-seqs --i-data cow_seqs_dada2.qza --o-visualization cow_ft_tab.qzv
+
+
+
+
 ```
 ``
 	
