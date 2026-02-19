@@ -42,12 +42,26 @@ We will first begin by copying raw sequencing data from a public folder on Alpin
 
 5. On OnDemand, go to your cow directory and open a new terminal
 
-
-
 6. Copy the raw sequencing files from this public folder to **your new folder** using the terminal. Do **not** change the names of these files and folders. Hint: make sure you are in your new cow folder before you run this code (this will copy over the whole folder):  
 
 ```
+#Working Directory
+
+cd /scratch/alpine/c837933776@colostate.edu/cow
+
+
+#Check directory:
+
+pwd 
+
+#Check to see if subdirectories are present
+
+ls
+
+#Copy the raw sequencing files
+
 cp -r /pl/active/courses/2024_summer/maw_2024/raw_reads .
+
 ```
 
 
@@ -102,6 +116,38 @@ qiime demux emp-paired \--m-barcodes-file ../metadata/ADD BARCODE FILE NAME HERE
 
 #visualize the read quality
 qiime demux summarize \--i-data demux_cow.qza \--o-visualization demux_cow.qzv
+
+
+#!/bin/bash
+#SBATCH --job-name=demux
+#SBATCH --nodes=1
+#SBATCH --ntasks=12
+#SBATCH --partition=amilan
+#SBATCH --time=02:00:00
+#SBATCH --mail-type=ALL
+#SBATCH --output=slurm-%j.out
+#SBATCH --qos=normal
+#SBATCH --mail-user=alexander.jones@colostate.edu
+
+#What needs to go here in order to “turn on” qiime2? Hint: we do these 2 commands every time we activate qiime2!
+
+module purge
+
+module load qiime2/2024.10_amplicon
+
+#change the following line if your file path looks different
+
+cd /scratch/alpine/c837933776@colostate.edu/cow/demux
+
+#Below is the command you will run to demultiplex the samples.
+
+qiime demux emp-paired \--m-barcodes-file ../metadata/cow_barcodes.txt \--m-barcodes-column barcode \--p-rev-comp-mapping-barcodes \--p-rev-comp-barcodes \--i-seqs ../cow_reads.qza \--o-per-sample-sequences demux_cow.qza \--o-error-correction-details cow_demux_error.qza
+
+#visualize the read quality
+
+qiime demux summarize \--i-data demux_cow.qza \--o-visualization demux_cow.qzv
+
+
 ```
 
 
