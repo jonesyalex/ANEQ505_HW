@@ -157,6 +157,7 @@ cd ../
 
 cd dada2
 
+#Denoise samples
 
 qiime dada2 denoise-paired --i-demultiplexed-seqs ../demux/demux_cow.qza --p-trim-left-f 0 --p-trim-left-r 0 --p-trunc-len-f 250 --p-trunc-len-r 250 --p-n-threads 6 --o-representative-sequences cow_seqs_dada2.qza --o-denoising-stats cow_dada2_stats.qza --o-table cow_table_dada2.qza
 
@@ -173,15 +174,30 @@ qiime feature-table tabulate-seqs --i-data cow_seqs_dada2.qza --o-visualization 
 	
 Briefly **describe** the key information from each denoising output file:
 1. Representative Sequences
+
+
 2. Denoising Stats
+
+
 3. Denoised Table
+
+
 
 **Answer the following questions:**  
 1. Where does the median Q-score begin to dip below Q30 for the forward reads and the reverse reads?
+
 2. What is the mean reads per sample?
+
+
 3. How long are the reads?
+
+
 4. What is the maximum length of all your sequences?
+
+
 5. Which sample (not including extraction controls starting with EC) lost the highest % of reads?
+
+
 6. Why did you chose to trim or truncate where you did?
 
 **To submit your homework from this document:**
