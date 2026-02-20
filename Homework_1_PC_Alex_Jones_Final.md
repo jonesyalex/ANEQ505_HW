@@ -133,19 +133,17 @@ qiime demux summarize \--i-data demux_cow.qza \--o-visualization demux_cow.qzv
  Run the script in your slurm directory as a job using: 
  
  
- ```
- 
+```
+#in terminal
+
 cd /scratch/alpine/c837933776@colostate.edu/cow/slurm
- 
+
 dos2unix demux.sh
 
 sbatch demux.sh
 
- ```
+```
 
-```
-cd /scratch/alpine
-```
 8.    Denoise
 
 Fill in the blank to denoise your samples based on what you think should be trimmed (from the front of the reads) or truncated (from the ends of the reads) based on the demux_cow.qzv file. You can run this in the terminal or as a job.
