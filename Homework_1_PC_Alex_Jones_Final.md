@@ -190,7 +190,7 @@ In the demux_cowqzv file we can see in the interactive quality plot that the fro
 In the cow_ft_sum.qzv file we can see in the frequency per sample summary table that the mean reads per sample is: 11,115.7
 
 3. How long are the reads?
-
+In the demux_cowqzv file we can see in the interactive quality plot
 
 4. What is the maximum length of all your sequences?
 
