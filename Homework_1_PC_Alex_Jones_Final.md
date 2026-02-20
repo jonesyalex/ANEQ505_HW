@@ -184,10 +184,10 @@ This file contains a table that quantifies the abundance of each ASV across samp
 
 **Answer the following questions:**  
 1. Where does the median Q-score begin to dip below Q30 for the forward reads and the reverse reads?
-For the front reads the median Q-score never dips below Q30, while the for the reverse reads the median Q-score dips below 30 at the 251 sequence base.
+In the demux_cowqzv file we can see in the interactive quality plot that the front reads the median Q-score never dips below Q30, while the for the reverse reads the median Q-score dips below 30 at the 251 sequence base.
 
 2. What is the mean reads per sample?
-
+In the cow_ft_sum.qzv file we can see in the frequency per sample summary table that the mean reads per sample is: 11,115.7
 
 3. How long are the reads?
 
