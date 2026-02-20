@@ -172,15 +172,14 @@ qiime feature-table tabulate-seqs --i-data cow_seqs_dada2.qza --o-visualization 
 ``
 	
 Briefly **describe** the key information from each denoising output file:
-1. Representative Sequences (cow_seqs_dada2.qza)(cow_ft_tab.qzv)
-
+1. Representative Sequences (cow_ft_tab.qzv)
 This file contains a list of all the unique ASV's identified in the dataset, showing the corrected sequences after denoising and trimming. 
 
-2. Denoising Stats (cow_dada2_stats.qza) (cow_metadata_tab.qzv)
+2. Denoising Stats  (cow_metadata_tab.qzv)
 This file summarizes the number of reads retained at each step of the process, which allows us to assess the data quality and filtering efficiency per sample. 
 
-3. Denoised Table (cow_table_dada2.qza)(cow_ft_sum.qzv)
-This file contains a 
+3. Denoised Table (cow_ft_sum.qzv)
+This file contains a table that quantifies the abundance of each ASV across samples and summarizes the sequencing depth along with the distribution of features per sample. 
 
 
 **Answer the following questions:**  
