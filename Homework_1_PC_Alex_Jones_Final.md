@@ -173,7 +173,7 @@ qiime feature-table tabulate-seqs --i-data cow_seqs_dada2.qza --o-visualization 
 	
 Briefly **describe** the key information from each denoising output file:
 1. Representative Sequences (cow_ft_tab.qzv)
-This file contains a list of all the unique ASV's identified in the dataset, showing the corrected sequences after denoising and trimming. 
+This file contains a list of all the unique ASV's identified in the dataset and shows the corrected sequences after denoising and trimming. 
 
 2. Denoising Stats  (cow_metadata_tab.qzv)
 This file summarizes the number of reads retained at each step of the process, which allows us to assess the data quality and filtering efficiency per sample. 
@@ -193,13 +193,13 @@ In the cow_ft_sum.qzv file we can see in the frequency per sample summary table 
 In the demux_cowqzv file we can see in the interactive quality plot that the reads are 251 bases long. 
 
 4. What is the maximum length of all your sequences?
-in the cow_ft_tab.qzv we can see in sequence length statistics that the maximum length of the sequences is 427.
+In the cow_ft_tab.qzv we can see in sequence length statistics that the maximum length of the sequences is 427.
 
 5. Which sample (not including extraction controls starting with EC) lost the highest % of reads?
-in the cow_metadata_tab.qzv we can see that the sample that lost highest % of reads was 2019.3.14.cow.nasal.18.rep
+In the cow_metadata_tab.qzv we can see that the sample that lost highest % of reads was 2019.3.14.cow.nasal.18.rep
 
 6. Why did you chose to trim or truncate where you did?
-
+I trimmed both the forward and reverse reads at 0 bases and truncated both of them at at 250 because both had a dip in quality at the 251 bases. Trimming them allowed only the most high quality bases for the merging. 
 
 **To submit your homework from this document:**
 write all of your commands here, then use command+P (for mac) or control+P (for windows) and search Git: commit. click it. then search for Git: Push and click it. go to your github online to check that it pushed correctly. we will check your github for homework credit. 
