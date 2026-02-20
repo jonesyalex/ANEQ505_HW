@@ -131,6 +131,7 @@ qiime demux summarize \--i-data demux_cow.qza \--o-visualization demux_cow.qzv
 
 
  Run the script in your slurm directory as a job using: 
+ 
  ```
  
 #In Terminal 
@@ -140,9 +141,8 @@ cd /scratch/alpine/c837933776@colostate.edu/cow/slurm
 dos2unix demux.sh
 
 sbatch demux.sh
- 
- 
  ```
+
 
 8.    Denoise
 
