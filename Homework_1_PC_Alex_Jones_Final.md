@@ -185,6 +185,8 @@ This file contains a table that quantifies the abundance of each ASV across samp
 **Answer the following questions:**  
 1. Where does the median Q-score begin to dip below Q30 for the forward reads and the reverse reads?
 
+
+
 2. What is the mean reads per sample?
 
 
