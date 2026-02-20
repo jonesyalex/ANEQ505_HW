@@ -190,10 +190,10 @@ In the demux_cowqzv file we can see in the interactive quality plot that the fro
 In the cow_ft_sum.qzv file we can see in the frequency per sample summary table that the mean reads per sample is: 11,115.7
 
 3. How long are the reads?
-In the demux_cowqzv file we can see in the interactive quality plot
+In the demux_cowqzv file we can see in the interactive quality plot that the reads are 251 bases long. 
 
 4. What is the maximum length of all your sequences?
-
+in the cow_ft_tab.qzv we can see in sequence length statistics that the maximum length is 427
 
 5. Which sample (not including extraction controls starting with EC) lost the highest % of reads?
 
