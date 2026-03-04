@@ -130,7 +130,7 @@ nano <tree.sh>
 #SBATCH --nodes=1
 #SBATCH --ntasks=8
 #SBATCH --partition=amilan
-#SBATCH --time=04:00:00
+#SBATCH --time=20:00:00
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=alexander.jones@colostate.edu
 #SBATCH --output=slurm-%j.out
@@ -155,7 +155,7 @@ qiime fragment-insertion sepp \--i-representative-sequences ../dada2/table_nomit
 ```
 #submit the job
 dos2unix tree.sh
-sbatch YourJobName.sh
+sbatch tree.sh
 ```
 We will use this file in the next homework!
 
