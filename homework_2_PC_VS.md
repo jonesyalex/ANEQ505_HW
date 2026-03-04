@@ -24,7 +24,7 @@ cd /scratch/alpine/c837933776@colostate.edu/cow/taxonomy
 # Insert the two commands to activate qiime2
 
 module purge
-module
+
 module load qiime2/2024.10_amplicon
 
 
