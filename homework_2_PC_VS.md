@@ -67,12 +67,12 @@ wget --no-check-certificate https://ftp.microbio.me/greengenes_release/2024.09/2
 
 Classify taxonomy using GreenGenes2 classify the ASVs (takes about 5 mins). ~={red}(1point)=~
 ```
-qiime feature-classifier classify-sklearn \--i-reads ../dada2/cow_seqs_dada2_filtered300.qza \--i-classifier NAME OF CLASSIFIER HERE.qza \--o-classification taxonomy_gg2_filtered.qza
+qiime feature-classifier classify-sklearn \--i-reads ../dada2/cow_seqs_dada2_filtered300.qza \--i-classifier 2024.09.backbone.v4.nb.qza \--o-classification taxonomy_gg2_filtered.qza
 ```
 
 Visualize the taxonomy of your ASVs: (~={red}1point)=~
 ```
-qiime metadata tabulate \--m-input-file 2024.09.backbone.v4.nb.qza \--o-visualization taxonomy_gg2_filtered.qzv
+qiime metadata tabulate \--m-input-file taxonomy_gg2_filtered.qza \--o-visualization taxonomy_gg2_filtered.qzv
 
 ```
 
