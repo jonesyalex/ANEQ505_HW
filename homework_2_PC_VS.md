@@ -16,7 +16,16 @@ Due: March 5th 2026 at midnight
 Load qiime2 in a terminal session after you go into the taxonomy folder 
 
 ```
+#Working Directory
+
+cd /scratch/alpine/c837933776@colostate.edu/cow/taxonomy 
+
+
 # Insert the two commands to activate qiime2
+
+module purge
+
+module load qiime2/2024.10_amplicon
 
 
 ```
@@ -25,7 +34,7 @@ Load qiime2 in a terminal session after you go into the taxonomy folder
 ```
 # filter out any large amplicons from the seqs and table (because they are contaminates)
 
-cd /scratch/alpine/$USER/cow/dada2
+cd /scratch/alpine/c837933776@colostate.edu/cow/dada2
 
 qiime feature-table filter-seqs \--i-data cow_seqs_dada2.qza \--m-metadata-file cow_seqs_dada2.qza \--p-where 'length(sequence) < 300' \--o-filtered-data cow_seqs_dada2_filtered300.qza
 
