@@ -57,11 +57,12 @@ qiime feature-table summarize \--i-table cow_table_dada2_filtered300.qza \--m-sa
 First get the Greengenes2 database:
 
 ```
-cd /scratch/alpine/$USER/cow/taxonomy
+cd /scratch/alpine/c837933776@colostate.edu/cow/taxonomy
 ```
 
 ```
 wget --no-check-certificate https://ftp.microbio.me/greengenes_release/2024.09/2024.09.backbone.v4.nb.qza
+
 ```
 
 Classify taxonomy using GreenGenes2 classify the ASVs (takes about 5 mins). ~={red}(1point)=~
