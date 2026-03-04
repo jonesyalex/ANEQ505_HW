@@ -72,7 +72,8 @@ qiime feature-classifier classify-sklearn \--i-reads ../dada2/cow_seqs_dada2_fil
 
 Visualize the taxonomy of your ASVs: (~={red}1point)=~
 ```
-qiime metadata tabulate \--m-input-file NAME OF TAXONOMY FILE.qza \--o-visualization taxonomy_gg2_filtered.qzv
+qiime metadata tabulate \--m-input-file 2024.09.backbone.v4.nb.qza \--o-visualization taxonomy_gg2_filtered.qzv
+
 ```
 
 - Filter mitochondria and chloroplast out to generate a filtered feature table, keep only ASVs with a class or lower taxonomy. fill in the blank (--p-exclude) to exclude these DNA. Fill in the blank to include only class level or below classifications. ~={red}(1point)=~
