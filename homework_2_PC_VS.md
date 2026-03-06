@@ -117,8 +117,6 @@ No, within the taxa bar plot, only d_Bacteria are present.
 
 We filter this ASV out because it a feature in low abundance that likely represents a sequencing error or contamination. Removing this ASV helps reduce noise. 
 
-
-
 **Question 7**: what is the difference between these two flags? 
 --p-exclude mitochondria,chloroplast,sp004296775 \
 --p-include c__ \
@@ -127,14 +125,17 @@ The --p-exclude flag removes sequences matching the specific terms while the --p
 
 **Question 8**: do the positive controls look the same as each other? Yes or No?
 
-Yes PC1.3 and PC1.4 appear to show very similar microbial composition across the replicates. 
+Yes PC1.3 and PC1.4 appear to have a very similar microbial composition. 
 
 **Question 9**: Do the negative/extraction controls (Samples labeled as EC), look like the positive controls? Yes or no? 
 
+No they appear to be dominated by a different taxa composition.
+
 **Question 10**: do the negative/extraction controls (Samples labeled as EC), look like the real samples? Yes or no?
 
+No, while they have some similarities, the real samples show a much more diverse taxa composition. 
 ## Phylogenetic tree ~={red}(1 point)=~
-Create a job script to run the phylogenetic tree building. Remember you must start a new terminal session, navigate to your slurm directory, and then submit the job. You do NOT need to start any other interactive sessions.This job will take about an hour. 
+Create a job script to run the phylogenetic tree building. Remember you must start a new terminal session, navigate to your slurm directory, and then submit the job. You do NOT need to start any other interactive sessions. This job will take about an hour. 
 
 Go to OnDemand and create a new text file for your job script
 ```
