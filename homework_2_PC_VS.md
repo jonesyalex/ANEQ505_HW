@@ -92,13 +92,16 @@ qiime taxa barplot \--i-table ../dada2/table_nomitochloro_gg2_filtered300.qza \-
 
 **Question 1**: Attach a picture of your taxa bar plot, organized by cow sampling location (body_site) at the level 7 taxonomic level. What general trends do you notice? 
 
-When taxa are organized by cow sampling location we can see that fecal and skin samples show more homogeneous microbial composition across samples,  while nasal and oral samples are much more variable and less consistent. fecal and skin sample also appear to share a consistently  higher abundance of s__Faecousia sp000434635. while nasal and oral samples dont apear to have the same relationsh
+When taxa are organized by cow sampling location we can see that fecal and skin samples show more homogeneous microbial composition across samples,  while nasal and oral samples are much more variable and less consistent. fecal and skin sample also appear to share a consistently  higher abundance of s__Faecousia sp000434635. while nasal and oral samples don't appear to have the same relationship with a common bacteria. 
 
 ![[Pasted image 20260305222935.png]]
 
 **_Question 2**: What are the top 2 most abundant bacterial **classes** in the fecal samples? 
+1: c__Clostridia_258483
+2: c__Bacteroidia
 
 **_Question 3**: What highly abundant ASV is shared between both the udder and skin samples?
+
 
 **_Question 4**: Which samples (still sorted by body_site) have higher alpha diversity in terms of observed features?
 
