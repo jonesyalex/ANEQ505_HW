@@ -83,10 +83,6 @@ qiime taxa filter-table \--i-table ../dada2/cow_table_dada2_filtered300.qza \--i
 ```
 
 
-f__Mitochondria
-c__Chloroplast
-
-
 - Visualize the taxa bar plot
 ```
 qiime taxa barplot \--i-table ../dada2/table_nomitochloro_gg2_filtered300.qza \--i-taxonomy taxonomy_gg2_filtered.qza \--m-metadata-file ../metadata/cow_metadata.txt \--o-visualization ../taxaplots/taxa_barplot_nomitochloro_gg2_filtered300.qzv
@@ -154,6 +150,10 @@ qiime fragment-insertion sepp \--i-representative-sequences ../dada2/cow_seqs_da
 - submit the job from the terminal
 ```
 #submit the job
+
+cd /scratch/alpine/c837933776@colostate.edu/cow/slurm
+
+
 dos2unix tree.sh
 sbatch tree.sh
 ```
@@ -161,15 +161,17 @@ We will use this file in the next homework!
 
 ### Once this job finishes, copy and paste what the slurm email says here ~={red}(1 point)=~: 
 
-#### for example: 
-Job ID: 24289371  
+
+Job ID: 24482163  
 Cluster: alpine  
-User/Group: [lindsval@colostate.edu](mailto:lindsval@colostate.edu)/[lindsvalpgrp@colostate.edu](mailto:lindsvalpgrp@colostate.edu)  
-State: TIMEOUT (exit code 0)  
+User/Group: c837933776@colostate.edu/c837933776pgrp@colostate.edu  
+State: COMPLETED (exit code 0)  
 Nodes: 1  
 Cores per node: 8  
-CPU Utilized: 03:57:54  
-CPU Efficiency: 12.37% of 1-08:03:52 core-walltime  
-Job Wall-clock time: 04:00:29  
-Memory Utilized: 6.55 GB  
-Memory Efficiency: 21.83% of 30.00 GB (3.75 GB/core)
+  
+-------- CPU Metrics --------  
+CPU Utilized: 03:13:08  
+CPU Efficiency: 12.30% of 1-02:10:24 core-walltime  
+Job Wall-clock time: 03:16:18  
+Memory Utilized: 8.76 GiB  
+Memory Efficiency: 29.20% of 30.00 GiB (3.75 GiB/core)
