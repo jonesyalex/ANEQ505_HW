@@ -97,11 +97,13 @@ When taxa are organized by cow sampling location we can see that fecal, udder an
 ![[Pasted image 20260305222935.png]]
 
 **_Question 2**: What are the top 2 most abundant bacterial **classes** in the fecal samples? 
+
 1: c__Clostridia_258483
 2: c__Bacteroidia
 
 **_Question 3**: What highly abundant ASV is shared between both the udder and skin samples?
 
+s__Faecousia sp000434635 is highly abundant ASV shared between both the udder and skin samples.
 
 **_Question 4**: Which samples (still sorted by body_site) have higher alpha diversity in terms of observed features?
 
