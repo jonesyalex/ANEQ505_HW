@@ -115,12 +115,15 @@ No, within the taxa bar plot, only d_Bacteria are present.
 
 **Question 6**: why do we filter out sp004296775?
 
+We filter this ASV out because it a feature in low abundance that likely represents a sequencing error or contamination. Removing this ASV helps reduce noise. 
 
 
 
 **Question 7**: what is the difference between these two flags? 
 --p-exclude mitochondria,chloroplast,sp004296775 \
 --p-include c__ \
+
+The exclude flag removes sequences matching the specific terms while the include flag 
 
 **Question 8**: do the positive controls look the same as each other? Yes or No?
 
