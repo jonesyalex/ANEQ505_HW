@@ -111,6 +111,7 @@ Based on the taxa bar plots we can see that nasal and oral samples have a higher
 
 **Question 5**: do all samples contain archaea as well?
 
+No, within the taxa bar plot, only d_Bacteria are present. 
 
 **Question 6**: why do we filter out sp004296775?
 
