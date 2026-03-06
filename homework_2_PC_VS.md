@@ -127,7 +127,7 @@ The --p-exclude flag removes sequences matching the specific terms while the --p
 
 **Question 8**: do the positive controls look the same as each other? Yes or No?
 
-Yes they appear to show very similar microbial composition across the replicates. 
+Yes PC1.3 and PC1.4 appear to show very similar microbial composition across the replicates. 
 
 **Question 9**: Do the negative/extraction controls (Samples labeled as EC), look like the positive controls? Yes or no? 
 
