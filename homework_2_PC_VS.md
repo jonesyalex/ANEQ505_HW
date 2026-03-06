@@ -123,9 +123,11 @@ We filter this ASV out because it a feature in low abundance that likely represe
 --p-exclude mitochondria,chloroplast,sp004296775 \
 --p-include c__ \
 
-The exclude flag removes sequences matching the specific terms while the include flag 
+The --p-exclude flag removes sequences matching the specific terms while the --p-include flag keeps only sequences matching the specified terms.
 
 **Question 8**: do the positive controls look the same as each other? Yes or No?
+
+
 
 **Question 9**: Do the negative/extraction controls (Samples labeled as EC), look like the positive controls? Yes or no? 
 
