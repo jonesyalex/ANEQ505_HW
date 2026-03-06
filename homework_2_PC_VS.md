@@ -107,8 +107,10 @@ s__Faecousia sp000434635 is highly abundant ASV shared between both the udder an
 
 **_Question 4**: Which samples (still sorted by body_site) have higher alpha diversity in terms of observed features?
 
+Based on the taxa bar plots we can see that nasal and oral samples have a higher alpha diversity in terms of observed features, comparatively to the other sampling locations.
 
 **Question 5**: do all samples contain archaea as well?
+
 
 **Question 6**: why do we filter out sp004296775?
 
