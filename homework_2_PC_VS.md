@@ -92,7 +92,9 @@ qiime taxa barplot \--i-table ../dada2/table_nomitochloro_gg2_filtered300.qza \-
 
 **Question 1**: Attach a picture of your taxa bar plot, organized by cow sampling location (body_site) at the level 7 taxonomic level. What general trends do you notice? 
 
+When taxa is organized by cow sampling location we can see that fecal and skin samples appear to have much more homogenous richness
 
+![[Pasted image 20260305222935.png]]
 
 **_Question 2**: What are the top 2 most abundant bacterial **classes** in the fecal samples? 
 
