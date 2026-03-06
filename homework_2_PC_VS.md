@@ -115,6 +115,9 @@ No, within the taxa bar plot, only d_Bacteria are present.
 
 **Question 6**: why do we filter out sp004296775?
 
+
+
+
 **Question 7**: what is the difference between these two flags? 
 --p-exclude mitochondria,chloroplast,sp004296775 \
 --p-include c__ \
