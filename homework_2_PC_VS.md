@@ -92,6 +92,8 @@ qiime taxa barplot \--i-table ../dada2/table_nomitochloro_gg2_filtered300.qza \-
 
 **Question 1**: Attach a picture of your taxa bar plot, organized by cow sampling location (body_site) at the level 7 taxonomic level. What general trends do you notice? 
 
+
+
 **_Question 2**: What are the top 2 most abundant bacterial **classes** in the fecal samples? 
 
 **_Question 3**: What highly abundant ASV is shared between both the udder and skin samples?
@@ -152,7 +154,6 @@ qiime fragment-insertion sepp \--i-representative-sequences ../dada2/cow_seqs_da
 #submit the job
 
 cd /scratch/alpine/c837933776@colostate.edu/cow/slurm
-
 
 dos2unix tree.sh
 sbatch tree.sh
