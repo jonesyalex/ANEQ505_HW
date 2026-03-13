@@ -92,9 +92,11 @@ looking at the observed_features_statistics.qzv file we can see that the body_si
 -Weighted Unifrac
 
 6. Which two body sites have the highest Faiths PD alpha diversity?  Are the groups significantly different?
-
+skin and fecal, they do not appear to be statistically different due to their overlap. 
 
 7. Does it seem like there are any groupings in the beta diversity? What are the groupings? 
+
+
 8. Why do you think these samples are grouping together? 
 9. What test can you run to determine if the groups are significantly different?
 10. What command would you use to run that test?
