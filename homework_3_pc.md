@@ -75,7 +75,7 @@ qiime diversity alpha-group-significance \--i-alpha-diversity core_metrics_resul
 ## Homework questions ~={red}(10 points)=~
 
 1. what is the name of the file you needed to use to figure out what min and max depths to use to generate the alpha rarefaction plot? (Hint: which file contains the sequencing depths for each sample)
-cow_table_dada2_filtered300.qza
+cow_table_dada2_filtered300.qzv
 
 2. what did you choose for the rarefaction depth (the input for core metrics -p-sampling-depth flag)? why? 
 
