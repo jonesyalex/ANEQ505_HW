@@ -81,9 +81,11 @@ cow_table_dada2_filtered300.qzv
 I chose 20000 for the max depth because the sample with the most features has 33768 sequences and when we look at the cow_table_dada2_filtered300.qzv we see that we start losing samples around 25000 sequences.
 
 3. Which cow body location had more observed features? Which has the lowest?
-
+looking at the observed_features_statistics.qzv file we can see that the body_site with the highest observed featuers on average was fecal and the lowest was nasal.
 
 4. What is the main difference between Faiths PD and Shannons alpha diversity metrics?  
+ The difference between Faiths PD and Shannons alpha diversit
+
 5. Which diversity metrics produced by the core-metrics pipeline require phylogenetic information?
 6. Which two body sites have the highest Faiths PD alpha diversity?  Are the groups significantly different?
 7. Does it seem like there are any groupings in the beta diversity? What are the groupings? 
