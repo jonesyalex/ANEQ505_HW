@@ -95,7 +95,7 @@ looking at the observed_features_statistics.qzv file we can see that the body_si
 skin and fecal, they do not appear to be statistically different due to their overlap. 
 
 7. Does it seem like there are any groupings in the beta diversity? What are the groupings? 
-
+yes by looking at the bray_curtis_emperor.qzv we can see that skin and udder appear to be grouped together along with nasal and oral. 
 
 8. Why do you think these samples are grouping together? 
 
@@ -108,6 +108,7 @@ skin and fecal, they do not appear to be statistically different due to their ov
 ```
 #insert command for running the test you suggest from question 7
 
-qiime diversity beta-group-significance \--i-distance-matrix core_metrics_results/unweighted_unifrac_distance_matrix.qza \--m-metadata-file metadata/cow_metadata.txt \--m-metadata-column body_site \--o-visualization core_metrics_results/unweighted_unifrac_distance_matrix.qzv
+qiime diversity beta-group-significance \--i-distance-matrix core_metrics_results/bray_curtis_distance_matrix.qza \--m-metadata-file metadata/cow_metadata.txt \--m-metadata-column body_site \--o-visualization core_metrics_results/bray_curtis_distance_matrix.qzv
+
 
 ```
