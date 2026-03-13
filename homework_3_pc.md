@@ -92,7 +92,7 @@ looking at the observed_features_statistics.qzv file we can see that the body_si
 -Weighted Unifrac
 
 6. Which two body sites have the highest Faiths PD alpha diversity?  Are the groups significantly different?
-skin and fecal, they do not appear to be statistically different due to their overlap. 
+skin and fecal, they do not appear to be statistically different due to their IQR overlap. 
 
 7. Does it seem like there are any groupings in the beta diversity? What are the groupings? 
 yes by looking at the bray_curtis_emperor.qzv we can see that skin and udder appear to be grouped together. 
