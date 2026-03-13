@@ -78,7 +78,7 @@ qiime diversity alpha-group-significance \--i-alpha-diversity core_metrics_resul
 cow_table_dada2_filtered300.qzv
 
 2. what did you choose for the rarefaction depth (the input for core metrics -p-sampling-depth flag)? why? 
-
+We chose 20000 for the max depth because the sample with the most features has 33768 sequences and when we look at the cow_table_dada2_filtered300.qzv we see that we start losing samples around 23000 sequences
 
 3. Which cow body location had more observed features? Which has the lowest?
 4. What is the main difference between Faiths PD and Shannons alpha diversity metrics?  
