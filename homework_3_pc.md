@@ -54,7 +54,7 @@ qiime diversity core-metrics-phylogenetic \--i-table dada2/table_nomitochloro_gg
 
 ```
 
-table_nomitochloro_gg2_filtered300.qza
+
 ### Visualize alpha diversity plots
 - generate a plot to visualize the observed features ~={red}(1 point)=~
 ```
