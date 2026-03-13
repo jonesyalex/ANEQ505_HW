@@ -22,7 +22,7 @@ Due:
 Load qiime2 in a terminal session after you go into the **cow** folder
 
 ```
-cd /scratch/alpine/c837933776@colostate.edu/cow
+
 
 # Insert the two commands to activate qiime2
 
@@ -37,8 +37,10 @@ module load qiime2/2024.10_amplicon
 
 ```
 #go to the cow directory
+cd /scratch/alpine/c837933776@colostate.edu/cow
 
-qiime diversity alpha-rarefaction \--i-table dada2/cow_table_dada2_filtered300.qza \--m-metadata-file metadata/cow_metadata.txt \--o-visualization alpha_rarefaction_curves_16S.qzv \--p-min-depth 10 \--p-max-depth ADD MAX RAREFACTION DEPTH
+
+qiime diversity alpha-rarefaction \--i-table dada2/cow_table_dada2_filtered300.qza \--m-metadata-file metadata/cow_metadata.txt \--o-visualization alpha_rarefaction_curves_16S.qzv \--p-min-depth 10 \--p-max-depth 20000 
 
 
 ```
