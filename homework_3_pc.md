@@ -108,6 +108,6 @@ skin and fecal, they do not appear to be statistically different due to their ov
 ```
 #insert command for running the test you suggest from question 7
 
-qiime diversity beta-group-significance \--i-distance-matrix core-metrics-results/unweighted_unifrac_distance_matrix.qza \--m-metadata-file metadata/cow_metadata.txt \--m-metadata-column body_site \--o-visualization core-metrics-results/unweighted_unifrac_distance_matrix.qzv
+qiime diversity beta-group-significance \--i-distance-matrix core_metrics_results/unweighted_unifrac_distance_matrix.qza \--m-metadata-file metadata/cow_metadata.txt \--m-metadata-column body_site \--o-visualization core_metrics_results/unweighted_unifrac_distance_matrix.qzv
 
 ```
