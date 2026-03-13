@@ -49,7 +49,7 @@ qiime diversity alpha-rarefaction \--i-table dada2/cow_table_dada2_filtered300.q
 ### Run Core Metrics ~={red}(1 point)=~
 
 ```
-qiime diversity core-metrics-phylogenetic \--i-table dada2/cow_table_dada2_filtered300.qza \--i-phylogeny INSERT FILE HERE \--m-metadata-file INSERT FILE HERE \--p-sampling-depth INSERT SEQ DEPTH HERE \--output-dir core_metrics_results
+qiime diversity core-metrics-phylogenetic \--i-table dada2/cow_table_dada2_filtered300.qza \--i-phylogeny tree/tree_gg2.qza \--m-metadata-file metadata/cow_metadata.txt \--p-sampling-depth 3000 \--output-dir core_metrics_results
 
 
 ```
