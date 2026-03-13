@@ -95,13 +95,13 @@ looking at the observed_features_statistics.qzv file we can see that the body_si
 skin and fecal, they do not appear to be statistically different due to their overlap. 
 
 7. Does it seem like there are any groupings in the beta diversity? What are the groupings? 
-yes by looking at the bray_curtis_emperor.qzv we can see that skin and udder appear to be grouped together along with nasal and oral. 
+yes by looking at the bray_curtis_emperor.qzv we can see that skin and udder appear to be grouped together. 
 
 8. Why do you think these samples are grouping together? 
-
+They are likely grouped together because the skin and udder shared similar external environments and are likely exposed to the same microbes
 
 9. What test can you run to determine if the groups are significantly different?
-
+We can run a PERMANOVA test to determine beta group significance 
 
 10. What command would you use to run that test?
 
