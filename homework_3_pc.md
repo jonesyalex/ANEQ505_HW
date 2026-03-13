@@ -66,6 +66,7 @@ qiime diversity alpha-group-significance \--i-alpha-diversity core_metrics_resul
 ```
 ## insert the entire code chunk for generating this visualization 
 
+qiime diversity alpha-group-significance \--i-alpha-diversity core_metrics_results/faith_pd_vector.qza \--m-metadata-file metadata/cow_metadata.txt \--o-visualization core_metrics_results/faiths_pd_statistics.qzv
 
 ```
 
