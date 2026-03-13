@@ -40,7 +40,7 @@ module load qiime2/2024.10_amplicon
 cd /scratch/alpine/c837933776@colostate.edu/cow
 
 
-qiime diversity alpha-rarefaction \--i-table dada2/cow_table_dada2_filtered300.qza \--m-metadata-file metadata/cow_metadata.txt \--o-visualization alpha_rarefaction_curves_16S.qzv \--p-min-depth 10 \--p-max-depth 20000
+qiime diversity alpha-rarefaction \--i-table dada2/table_nomitochloro_gg2_filtered300.qza \--m-metadata-file metadata/cow_metadata.txt \--o-visualization alpha_rarefaction_curves_16S.qzv \--p-min-depth 10 \--p-max-depth 20000
 
 
 ```
@@ -49,12 +49,12 @@ qiime diversity alpha-rarefaction \--i-table dada2/cow_table_dada2_filtered300.q
 ### Run Core Metrics ~={red}(1 point)=~
 
 ```
-qiime diversity core-metrics-phylogenetic \--i-table dada2/cow_table_dada2_filtered300.qza \--i-phylogeny tree/tree_gg2.qza \--m-metadata-file metadata/cow_metadata.txt \--p-sampling-depth 3000 \--output-dir core_metrics_results
+qiime diversity core-metrics-phylogenetic \--i-table dada2/table_nomitochloro_gg2_filtered300.qza \--i-phylogeny tree/tree_gg2.qza \--m-metadata-file metadata/cow_metadata.txt \--p-sampling-depth 3000 \--output-dir core_metrics_results
 
 
 ```
 
-
+table_nomitochloro_gg2_filtered300.qza
 ### Visualize alpha diversity plots
 - generate a plot to visualize the observed features ~={red}(1 point)=~
 ```
