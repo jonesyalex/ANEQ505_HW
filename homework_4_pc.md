@@ -143,7 +143,7 @@ You can do this by opening a .qzv file in qiime2 view and download the tsv, whic
 
 2. Which body site appeared most distinct in the taxa bar plot, meaning it was not similar to at least one of the other body sites? Explain why that site looks different. 
 
-Nasal was not similar to at least one of the other body sites,
+Nasal was not similar to at least one of the other body sites, this difference is likely occurring because the nasal cavity has a unique environment, which selects for different microbial communities compared to skin, udder, oral or fecal. 
 
 3. When generating the filtered table for ANCOM-BC2, what value did you choose for `--p-min-frequency`? Which core metrics parameter should this match, and why do these values need to be the same? (Report your core metrics value here:     ___) 
 
