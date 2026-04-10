@@ -110,14 +110,14 @@ qiime feature-table filter-samples \--i-table table_nomitochlorocontrols_gg2_fil
 **Filter out low abundance and low prevalence ASVs ~={red}(1 point)=~**
 
 ```
-qiime feature-table filter-features \--i-table INPUT TABLE \--p-min-frequency 50 \--p-min-samples 20 \--o-filtered-table table_5k_abund.qza
+qiime feature-table filter-features \--i-table table_5k.qza \--p-min-frequency 50 \--p-min-samples 20 \--o-filtered-table table_5k_abund.qza
 ```
 
 **Collapse features to genus level ~={red}(1 point)=~**
 - We will collapse to the genus level to make it easier to interpret the results. (Hint: We used 7 for species, so think about which number you would use for genus.)
 
 ```
-qiime taxa collapse \--i-table table_5k_abund.qza \--i-taxonomy ../taxonomy/taxonomy_gg2.qza \--p-level GENUS NUMBER \--o-collapsed-table table_5k_abund_GENUS NUMBER.qza
+qiime taxa collapse \--i-table table_5k_abund.qza \--i-taxonomy ../taxonomy/taxonomy_gg2.qza \--p-level 6 \--o-collapsed-table table_5k_abund_6.qza
 ```
 
 
