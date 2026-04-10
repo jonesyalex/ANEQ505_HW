@@ -131,9 +131,9 @@ qiime composition ancombc2 \--i-table table_5k_abund_6.qza \--m-metadata-file co
 **Visualize the ANCOM-BC2 results ~={red}(1 point)=~**
 - Generate a barplot to visualize the differentially abundant features. 
 ```
-qiime composition tabulate \--i-data INPUT FILE \--o-visualization ancombc2_bodysite_genus.qzv
+qiime composition tabulate \--i-data ancombc2_results_bodysite_genus.qza \--o-visualization ancombc2_bodysite_genus.qzv
   
-qiime composition ancombc2-visualizer \--i-data INPUT FILE \--o-visualization ancombc2_barplot_bodysite_genus.qzv
+qiime composition ancombc2-visualizer \--i-data ancombc2_results_bodysite_genus.qza \--o-visualization ancombc2_barplot_bodysite_genus.qzv
 ```
 
 ## Homework questions: (~={red}5 POINTS=~)
