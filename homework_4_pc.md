@@ -151,6 +151,7 @@ This sequencing depth used in core metrics 5000 is matched when filtering sample
 
 
 4. Why do we filter out samples with low frequency and low abundance ASVs?
+We do this to improve the quality and reliability of the analysis. 
 
 5. What was the most enriched genus in skin compared to fecal, and what was the most depleted genus in skin compared to fecal (make sure adjusted p is set to less than 0.05)?
 	
