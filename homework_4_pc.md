@@ -145,7 +145,10 @@ You can do this by opening a .qzv file in qiime2 view and download the tsv, whic
 
 Nasal was not similar to at least one of the other body sites, this difference is likely occurring because the nasal cavity has a unique environment, which selects for different microbial communities compared to skin, udder, oral or fecal. 
 
-3. When generating the filtered table for ANCOM-BC2, what value did you choose for `--p-min-frequency`? Which core metrics parameter should this match, and why do these values need to be the same? (Report your core metrics value here:     ___) 
+3. When generating the filtered table for ANCOM-BC2, what value did you choose for `--p-min-frequency`? Which core metrics parameter should this match, and why do these values need to be the same? (Report your core metrics value here:  5000  ___) 
+
+This sequencing depth used in core metrics 5000 is matched when filtering samples for ANCOM-BC2 to ensure that both diversity analyses and differential abundance testing include the same set of samples, this reduces bias which might occur from uneven sampling. 
+
 
 4. Why do we filter out samples with low frequency and low abundance ASVs?
 
