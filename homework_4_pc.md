@@ -154,7 +154,7 @@ This sequencing depth used in core metrics 5000 is matched when filtering sample
 We do this to improve the quality and reliability of the analysis. 
 
 5. What was the most enriched genus in skin compared to fecal, and what was the most depleted genus in skin compared to fecal (make sure adjusted p is set to less than 0.05)?
-	
+	The most enriched was 
 
 ## Extra credit~={orange} (3 points)=~ generate a classification model to see how well we can predict cow body site
 
