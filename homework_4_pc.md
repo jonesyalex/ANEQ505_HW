@@ -96,7 +96,7 @@ module load qiime2/2026.1_amplicon
 # Get matadata with no controls
 cp /pl/active/courses/2025_summer/CSU_2025/cow_hw/cow_metadata_nocontrols.txt .
 
-qiime feature-table filter-samples \--i-table ../dada2/table_nomitochloro_gg2_filtered300.qza \--m-metadata-file cow_metadata_nocontrols.txt \--o-filtered-table table_nomitochlorocontrols_gg2_filtered300.qza
+qiime feature-table filter-samples \--i-table dada2/table_nomitochloro_gg2_filtered300.qza \--m-metadata-file cow_metadata_nocontrols.txt \--o-filtered-table table_nomitochlorocontrols_gg2_filtered300.qza
 ```
 
 **Filter Samples ~={red}(1 point)=~** 
@@ -104,7 +104,7 @@ qiime feature-table filter-samples \--i-table ../dada2/table_nomitochloro_gg2_fi
 - Navigate into the ancombc2 directory
 - Choose the min frequency for sample filtering:
 ```
-qiime feature-table filter-samples \--i-table table_nomitochlorocontrols_gg2_filtered300.qza \--p-min-frequency YOUR NUMBER HERE \--o-filtered-table table_5k.qza
+qiime feature-table filter-samples \--i-table table_nomitochlorocontrols_gg2_filtered300.qza \--p-min-frequency 5000 \--o-filtered-table table_5k.qza
 ```
 
 **Filter out low abundance and low prevalence ASVs ~={red}(1 point)=~**
