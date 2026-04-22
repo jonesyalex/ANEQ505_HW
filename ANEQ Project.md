@@ -183,7 +183,7 @@ qiime diversity alpha-rarefaction \--i-table ../dada2/table_nomitochloro_nocontr
 
 ```
 
-Run core metric (check depth)
+Run core metric (check depth) **This is where it stopped working.**
 ```
 cd ../
 
