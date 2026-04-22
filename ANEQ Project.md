@@ -63,9 +63,7 @@ mv demux_sr49_pempek_nonasal.qza demux_pempek.qza
 
 visualize the demux 
 ```
-qiime demux summarize \
---i-data demux_pempek.qza \
---o-visualization demux_pempek.qzv
+qiime demux summarize \--i-data demux_pempek.qza \--o-visualization demux_pempek.qzv
 ```
 
 change directory to dada2
@@ -75,56 +73,32 @@ cd ../dada2
 
 run the dada2 (denoising)
 ```
-qiime dada2 denoise-paired \
---i-demultiplexed-seqs ../demux/demux_pempek.qza \
---p-trim-left-f 0 \
---p-trim-left-r 0 \
---p-trunc-len-f 250 \
---p-trunc-len-r 250 \
---p-n-threads 6 \
---o-representative-sequences pempek_seqs_dada2.qza \
---o-denoising-stats pempek_dada2_stats.qza \
---o-table pempek_table_dada2.qza
+
+qiime dada2 denoise-paired \--i-demultiplexed-seqs ../demux/demux_pempek.qza \--p-trim-left-f 0 \--p-trim-left-r 0 \--p-trunc-len-f 250 \--p-trunc-len-r 250 \--p-n-threads 6 \--o-representative-sequences pempek_seqs_dada2.qza \--o-denoising-stats pempek_dada2_stats.qza \--o-table pempek_table_dada2.qza
+
 ```
 
 Visualize the dada2
 ```
 #Visualize the denoising results:
-qiime metadata tabulate \
---m-input-file pempek_dada2_stats.qza \
---o-visualization dada2_stats.qzv
 
-qiime feature-table summarize \
---i-table pempek_table_dada2.qza \
---m-sample-metadata-file ../metadata/metadata.txt \
---o-visualization dada2_table.qzv
+qiime metadata tabulate \--m-input-file pempek_dada2_stats.qza \--o-visualization dada2_stats.qzv
 
-qiime feature-table tabulate-seqs \
---i-data pempek_seqs_dada2.qza \
---o-visualization dada2_seqs.qzv
+qiime feature-table summarize \--i-table pempek_table_dada2.qza \--m-sample-metadata-file ../metadata/metadata.txt \--o-visualization dada2_table.qzv
+
+qiime feature-table tabulate-seqs \--i-data pempek_seqs_dada2.qza \--o-visualization dada2_seqs.qzv
+
 ```
 
 Filter sequence longer than 300
 ```
-qiime feature-table filter-seqs \
---i-data pempek_seqs_dada2.qza \
---m-metadata-file pempek_seqs_dada2.qza \
---p-where 'length(sequence) < 300' \
---o-filtered-data pempek_seqs_dada2_filtered300.qza
+qiime feature-table filter-seqs \--i-data pempek_seqs_dada2.qza \--m-metadata-file pempek_seqs_dada2.qza \--p-where 'length(sequence) < 300' \--o-filtered-data pempek_seqs_dada2_filtered300.qza
 
-qiime feature-table tabulate-seqs \
---i-data pempek_seqs_dada2_filtered300.qza \
---o-visualization pempek_seqs_dada2_filtered300.qzv
+qiime feature-table tabulate-seqs \--i-data pempek_seqs_dada2_filtered300.qza \--o-visualization pempek_seqs_dada2_filtered300.qzv
 
-qiime feature-table filter-features \
---i-table pempek_table_dada2.qza \
---m-metadata-file pempek_seqs_dada2_filtered300.qza \
---o-filtered-table pempek_table_dada2_filtered300.qza
+qiime feature-table filter-features \--i-table pempek_table_dada2.qza \--m-metadata-file pempek_seqs_dada2_filtered300.qza \--o-filtered-table pempek_table_dada2_filtered300.qza
   
-qiime feature-table summarize \
---i-table pempek_table_dada2_filtered300.qza \
---m-sample-metadata-file ../metadata/metadata.txt \
---o-visualization pempek_table_dada2_filtered300.qzv
+qiime feature-table summarize \--i-table pempek_table_dada2_filtered300.qza \--m-sample-metadata-file ../metadata/metadata.txt \--o-visualization pempek_table_dada2_filtered300.qzv
     
 ```
 
