@@ -106,36 +106,22 @@ Change to taxonomy directory
 cd taxonomy
 run the taxonomy
 ```
-qiime feature-classifier classify-sklearn \
---i-reads ../dada2/pempek_seqs_dada2_filtered300.qza \
---i-classifier 2024.09.backbone.v4.nb.qza \
---o-classification taxonomy_gg2_filtered.qza
+qiime feature-classifier classify-sklearn \--i-reads ../dada2/pempek_seqs_dada2_filtered300.qza \--i-classifier 2024.09.backbone.v4.nb.qza \--o-classification taxonomy_gg2_filtered.qza
 ```
 
 Visualize the taxonomy
 ```
-qiime metadata tabulate \
---m-input-file taxonomy_gg2_filtered.qza \
---o-visualization taxonomy_gg2_filtered.qzv
+qiime metadata tabulate \--m-input-file taxonomy_gg2_filtered.qza \--o-visualization taxonomy_gg2_filtered.qzv
 ```
 
 Filter the chloroplast and mitochondria
 ```
-qiime taxa filter-table \
---i-table ../dada2/pempek_table_dada2_filtered300.qza \
---i-taxonomy taxonomy_gg2_filtered.qza \
---p-exclude mitochondria,chloroplast,sp004296775 \
---p-include c__ \
---o-filtered-table ../dada2/table_nomitochloro_gg2_filtered300.qza
+qiime taxa filter-table \--i-table ../dada2/pempek_table_dada2_filtered300.qza \--i-taxonomy taxonomy_gg2_filtered.qza \--p-exclude mitochondria,chloroplast,sp004296775 \--p-include c__ \--o-filtered-table ../dada2/table_nomitochloro_gg2_filtered300.qza
 ```
 
 Generate Taxa Barplot
 ```
-qiime taxa barplot \
---i-table ../dada2/table_nomitochloro_gg2_filtered300.qza \
---i-taxonomy taxonomy_gg2_filtered.qza \
---m-metadata-file ../metadata/metadata.txt \
---o-visualization ../taxaplots/taxa_barplot_nomitochloro_gg2_filtered300.qzv
+qiime taxa barplot \--i-table ../dada2/table_nomitochloro_gg2_filtered300.qza \--i-taxonomy taxonomy_gg2_filtered.qza \--m-metadata-file ../metadata/metadata.txt \--o-visualization ../taxaplots/taxa_barplot_nomitochloro_gg2_filtered300.qzv
 ```
 
 sbatch for phylogenetic tree --> make a pempek.sh at slurm directory
@@ -162,20 +148,12 @@ wget --no-check-certificate -P ../tree https://ftp.microbio.me/greengenes_releas
 
 
 #Command
-qiime fragment-insertion sepp \
---i-representative-sequences ../dada2/pempek_seqs_dada2_filtered300.qza \
---i-reference-database ../tree/2022.10.backbone.sepp-reference.qza \
---o-tree ../tree/tree_gg2.qza \
---o-placements ../tree/tree_placements_gg2.qza
+qiime fragment-insertion sepp \--i-representative-sequences ../dada2/pempek_seqs_dada2_filtered300.qza \--i-reference-database ../tree/2022.10.backbone.sepp-reference.qza \--o-tree ../tree/tree_gg2.qza \--o-placements ../tree/tree_placements_gg2.qza
 ```
 
 remove the controls
 ```
-qiime feature-table filter-samples \
---i-table dada2/table_nomitochloro_gg2_filtered300.qza \
---m-metadata-file metadata/metadata.txt \
---p-where "NOT [sample_type] IN ('control') " \
---o-filtered-table dada2/table_nomitochloro_nocontrol.qza
+qiime feature-table filter-samples \--i-table dada2/table_nomitochloro_gg2_filtered300.qza \--m-metadata-file metadata/metadata.txt \--p-where "NOT [sample_type] IN ('control') " \--o-filtered-table dada2/table_nomitochloro_nocontrol.qza
 ```
 
 ```
@@ -184,11 +162,7 @@ sbatch pempek.sh
 
 visualise without control
 ```
-qiime taxa barplot \
---i-table ../dada2/table_nomitochloro_nocontrol.qza \
---i-taxonomy ../taxonomy/taxonomy_gg2_filtered.qza \
---m-metadata-file ../metadata/metadata.txt \
---o-visualization table_nomitochloro_nocontrol.qzv
+qiime taxa barplot \--i-table ../dada2/table_nomitochloro_nocontrol.qza \--i-taxonomy ../taxonomy/taxonomy_gg2_filtered.qza \--m-metadata-file ../metadata/metadata.txt \--o-visualization table_nomitochloro_nocontrol.qzv
 ```
 
 Make directiory rarefaction
@@ -201,50 +175,28 @@ cd alpha_rarefaction
 
 Run rarefaction (check for depth)
 ```
-qiime diversity alpha-rarefaction \
---i-table ../dada2/table_nomitochloro_nocontrol.qza \
---m-metadata-file ../metadata/metadata.txt \
---p-min-depth 50 \
---p-max-depth 66000 \
---o-visualization alpha_rarefaction_curves_16S.qzv \
+qiime diversity alpha-rarefaction \--i-table ../dada2/table_nomitochloro_nocontrol.qza \--m-metadata-file ../metadata/metadata.txt \--p-min-depth 50 \--p-max-depth 66000 \--o-visualization alpha_rarefaction_curves_16S.qzv \
 ```
 
 Run core metric (check depth)
 ```
 cd ../
 
-qiime diversity core-metrics-phylogenetic \
---i-table dada2/table_nomitochloro_nocontrol.qza \
---i-phylogeny tree/tree_gg2.qza \
---m-metadata-file metadata/metadata.txt \
---p-sampling-depth 7000 \
---output-dir core_metrics_results
+qiime diversity core-metrics-phylogenetic \--i-table dada2/table_nomitochloro_nocontrol.qza \--i-phylogeny tree/tree_gg2.qza \--m-metadata-file metadata/metadata.txt \--p-sampling-depth 7000 \--output-dir core_metrics_results
 ```
 
 Visualize observe features
 ```
-qiime diversity alpha-group-significance \
---i-alpha-diversity core_metrics_results/observed_features_vector.qza \
---m-metadata-file metadata/metadata.txt \
---o-visualization core_metrics_results/observed_features_statistics.qzv
+qiime diversity alpha-group-significance \--i-alpha-diversity core_metrics_results/observed_features_vector.qza \--m-metadata-file metadata/metadata.txt \--o-visualization core_metrics_results/observed_features_statistics.qzv
 ```
 
 generate a plot to visualize
 ``` 
-qiime diversity alpha-group-significance \
---i-alpha-diversity core_metrics_results/shannon_vector.qza \
---m-metadata-file metadata/metadata.txt \
---o-visualization core_metrics_results/shannon_statistics.qzv  
+qiime diversity alpha-group-significance \--i-alpha-diversity core_metrics_results/shannon_vector.qza \--m-metadata-file metadata/metadata.txt \--o-visualization core_metrics_results/shannon_statistics.qzv  
   
-qiime diversity alpha-group-significance \
---i-alpha-diversity core_metrics_results/faith_pd_vector.qza \
---m-metadata-file metadata/metadata.txt \
---o-visualization core_metrics_results/faiths_pd_statistics.qzv
+qiime diversity alpha-group-significance \--i-alpha-diversity core_metrics_results/faith_pd_vector.qza \--m-metadata-file metadata/metadata.txt \--o-visualization core_metrics_results/faiths_pd_statistics.qzv
 
-qiime diversity alpha-correlation \
---i-alpha-diversity core_metrics_results/faith_pd_vector.qza \
---m-metadata-file metadata/metadata.txt \
---o-visualization core_metrics_results/faith_pd_correlation_statistics.qzv
+qiime diversity alpha-correlation \--i-alpha-diversity core_metrics_results/faith_pd_vector.qza \--m-metadata-file metadata/metadata.txt \--o-visualization core_metrics_results/faith_pd_correlation_statistics.qzv
 
 ```
 
@@ -254,14 +206,7 @@ mkdir longitudinal
 
 cd longitudinal
 
-qiime longitudinal volatility \
---m-metadata-file ../metadata/metadata.txt \
---m-metadata-file ../core_metrics_results/weighted_unifrac_pcoa_results.qza \
---p-state-column day \
---p-individual-id-column calf_id \
---p-default-group-column 'sample_type' \
---p-default-metric 'Axis 2' \
---o-visualization pc_vol_sample_type.qzv
+qiime longitudinal volatility \--m-metadata-file ../metadata/metadata.txt \--m-metadata-file ../core_metrics_results/weighted_unifrac_pcoa_results.qza \--p-state-column day \--p-individual-id-column calf_id \--p-default-group-column 'sample_type' \--p-default-metric 'Axis 2' \--o-visualization pc_vol_sample_type.qzv
 ```
 
 Export
@@ -306,15 +251,9 @@ Export transpose
 ```
 cd dada2
 
-qiime feature-table transpose \
---i-table table_nomitochloro_gg2_filtered300.qza \
---o-transposed-feature-table table_nomitochloro_transposed.qza
+qiime feature-table transpose \--i-table table_nomitochloro_gg2_filtered300.qza \--o-transposed-feature-table table_nomitochloro_transposed.qza
 
-qiime metadata tabulate \
---m-input-file table_nomitochloro_transposed.qza \
---m-input-file pempek_seqs_dada2.qza \
---m-input-file ../taxonomy/taxonomy_gg2_filtered.qza \
---o-visualization tabulated_results.qzv
+qiime metadata tabulate \--m-input-file table_nomitochloro_transposed.qza \--m-input-file pempek_seqs_dada2.qza \--m-input-file ../taxonomy/taxonomy_gg2_filtered.qza \--o-visualization tabulated_results.qzv
 ```
 
 Beta Metrics
@@ -385,47 +324,26 @@ mkdir ancombc2
 
 cd ancombc2
 
-qiime feature-table filter-samples \
---i-table ../dada2/table_nomitochloro_nocontrol.qza \
---p-min-frequency 7000 \
---o-filtered-table table_nomitochloro_7000.qza
+qiime feature-table filter-samples \--i-table ../dada2/table_nomitochloro_nocontrol.qza \--p-min-frequency 7000 \--o-filtered-table table_nomitochloro_7000.qza
 ```
 
 ```
-qiime feature-table filter-features \
---i-table table_nomitochloro_7000.qza \
---p-min-frequency 50 \
---p-min-samples 4 \
---o-filtered-table table_nomitochloro_7000_abund.qza
+qiime feature-table filter-features \--i-table table_nomitochloro_7000.qza \--p-min-frequency 50 \--p-min-samples 4 \--o-filtered-table table_nomitochloro_7000_abund.qza
 ```
 
 ```
-qiime taxa collapse \
---i-table table_nomitochloro_7000_abund.qza \
---i-taxonomy ../taxonomy/taxonomy_gg2_filtered.qza \
---p-level 7 \
---o-collapsed-table table_nomitochloro_7000_abund_L7.qza
+qiime taxa collapse \--i-table table_nomitochloro_7000_abund.qza \--i-taxonomy ../taxonomy/taxonomy_gg2_filtered.qza \--p-level 7 \--o-collapsed-table table_nomitochloro_7000_abund_L7.qza
 ```
 
 
 STILL FAILED. (the metadata should be have no controls.)
 ```
 ANCOMBC USING NEW METADATA
-qiime composition ancombc2 \
---i-table table_nomitochloro_7000_abund_L7.qza \
---m-metadata-file pempek_metadata_noEC.txt \
---p-fixed-effects-formula 'treatment + age_w' \
---p-reference-levels treatment::pair age_w::birth \
---p-random-effects-formula '(1 | calf_number)' \
---o-ancombc2-output ancombc2_sampletype_day_treatment_L7.qza
+qiime composition ancombc2 \--i-table table_nomitochloro_7000_abund_L7.qza \--m-metadata-file pempek_metadata_noEC.txt \--p-fixed-effects-formula 'treatment + age_w' \--p-reference-levels treatment::pair age_w::birth \--p-random-effects-formula '(1 | calf_number)' \--o-ancombc2-output ancombc2_sampletype_day_treatment_L7.qza
 
-qiime composition tabulate \
---i-data ancombc2_sampletype_day_L7.qza \
---o-visualization ancombc2_sampletype_day_L7.qzv
+qiime composition tabulate \--i-data ancombc2_sampletype_day_L7.qza \--o-visualization ancombc2_sampletype_day_L7.qzv
 
-qiime composition ancombc2-visualizer \
---i-data ancombc2_sampletype_day_L7.qza \
---o-visualization ancombc2_barplot_sampletype_day_L7.qzv
+qiime composition ancombc2-visualizer \--i-data ancombc2_sampletype_day_L7.qza \--o-visualization ancombc2_barplot_sampletype_day_L7.qzv
 ```
 
 ML treatment
@@ -436,30 +354,15 @@ mkdir ml
 
 cd ml
 
-qiime taxa collapse \
---i-table ../core_metrics_results/rarefied_table.qza \
---i-taxonomy ../taxonomy/taxonomy_gg2_filtered.qza \
---p-level 7 \
---o-collapsed-table rare_table_L7.qza
+qiime taxa collapse \--i-table ../core_metrics_results/rarefied_table.qza \--i-taxonomy ../taxonomy/taxonomy_gg2_filtered.qza \--p-level 7 \--o-collapsed-table rare_table_L7.qza
 ```
 
 ```
-qiime sample-classifier classify-samples \
---i-table rare_table_L7.qza \
---m-metadata-file ../metadata/metadata.txt \
---m-metadata-column treatment \
---p-random-state 123 \
---p-n-jobs 1 \
---output-dir sample_classifier_results_treatment
+qiime sample-classifier classify-samples \--i-table rare_table_L7.qza \--m-metadata-file ../metadata/metadata.txt \--m-metadata-column treatment \--p-random-state 123 \--p-n-jobs 1 \--output-dir sample_classifier_results_treatment
 ```
 
 ML age (days)
 
 ```
-qiime sample-classifier classify-samples \
---i-table rare_table_L7.qza \
---m-metadata-file ../metadata/metadata.txt \
---m-metadata-column age_d \
---p-random-state 123 \
---p-n-jobs 1 \
---output-dir sample_classifier_results_age
+qiime sample-classifier classify-samples \--i-table rare_table_L7.qza \--m-metadata-file ../metadata/metadata.txt \--m-metadata-column age_d \--p-random-state 123 \--p-n-jobs 1 \--output-dir sample_classifier_results_age
+
