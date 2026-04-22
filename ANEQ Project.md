@@ -178,7 +178,9 @@ cd alpha_rarefaction
 
 Run rarefaction (check for depth)
 ```
+
 qiime diversity alpha-rarefaction \--i-table ../dada2/table_nomitochloro_nocontrol.qza \--m-metadata-file ../metadata/metadata.txt \--p-min-depth 50 \--p-max-depth 66000 \--o-visualization alpha_rarefaction_curves_16S.qzv 
+
 ```
 
 Run core metric (check depth)
@@ -186,6 +188,7 @@ Run core metric (check depth)
 cd ../
 
 qiime diversity core-metrics-phylogenetic \--i-table dada2/table_nomitochloro_nocontrol.qza \--i-phylogeny tree/tree_gg2.qza \--m-metadata-file metadata/metadata.txt \--p-sampling-depth 7000 \--output-dir core_metrics_results
+
 ```
 
 Visualize observe features
