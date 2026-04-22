@@ -103,6 +103,7 @@ qiime feature-table summarize \--i-table pempek_table_dada2_filtered300.qza \--m
 ```
 
 Change to taxonomy directory
+
 cd taxonomy
 run the taxonomy
 ```
