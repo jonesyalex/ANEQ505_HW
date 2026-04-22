@@ -163,7 +163,9 @@ sbatch pempek.sh
 
 visualise without control
 ```
+
 qiime taxa barplot \--i-table ../dada2/table_nomitochloro_nocontrol.qza \--i-taxonomy ../taxonomy/taxonomy_gg2_filtered.qza \--m-metadata-file ../metadata/metadata.txt \--o-visualization table_nomitochloro_nocontrol.qzv
+
 ```
 
 Make directiory rarefaction
@@ -176,7 +178,7 @@ cd alpha_rarefaction
 
 Run rarefaction (check for depth)
 ```
-qiime diversity alpha-rarefaction \--i-table ../dada2/table_nomitochloro_nocontrol.qza \--m-metadata-file ../metadata/metadata.txt \--p-min-depth 50 \--p-max-depth 66000 \--o-visualization alpha_rarefaction_curves_16S.qzv \
+qiime diversity alpha-rarefaction \--i-table ../dada2/table_nomitochloro_nocontrol.qza \--m-metadata-file ../metadata/metadata.txt \--p-min-depth 50 \--p-max-depth 66000 \--o-visualization alpha_rarefaction_curves_16S.qzv 
 ```
 
 Run core metric (check depth)
