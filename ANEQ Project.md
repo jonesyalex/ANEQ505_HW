@@ -52,9 +52,7 @@ mv pempek_metadata_3_26.txt metadata.txt
 
 visualize the metadata file
 ```
-qiime metadata tabulate \
---m-input-file metadata.txt \
---o-visualization metadata.qzv
+qiime metadata tabulate \--m-input-file metadata.txt \--o-visualization metadata.qzv
 ```
 
 Insert the demux_sr49_pempek_nonasal.qza in the demux directory and rename the file
